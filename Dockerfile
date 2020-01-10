@@ -18,14 +18,14 @@ RUN apt-get update && \
         wget \
         zip \
         unzip \
-        ruby \
-        ruby-full \
         openssh-client \
         g++ \
         make \
     && rm -rf /tmp/* /var/tmp/*
 
-RUN gem install fastlane -NV
+RUN curl -sSL https://get.rvm.io | bash
+
+RUN gem install fastlane
 RUN curl -sL firebase.tools | bash
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip sdk-tools-linux.zip
