@@ -23,10 +23,8 @@ RUN apt-get update && \
         zip \
         unzip \
         ruby \
-        ruby-rdoc \
-        ruby-irb \
-        ruby-dev \
-        openssh \
+        ruby-full \
+        openssh-client \
         g++ \
         make \
     && rm -rf /tmp/* /var/tmp/*
