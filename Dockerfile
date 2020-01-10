@@ -1,9 +1,8 @@
 FROM anapsix/alpine-java:8_jdk
-LABEL maintainer "IISUE <sklee@iisue.com>"
-
+LABEL maintainer "Apiumhub <dev@apiumhub.com>"
 ARG VCS_REF
 LABEL org.label-schema.vcs-ref=$VCS_REF \
-      org.label-schema.vcs-url="e.g. https://github.com/microscaling/microscaling"
+      org.label-schema.vcs-url="Apiumhub"
 
 ENV LANG "en_US.UTF-8"
 ENV LANGUAGE "en_US.UTF-8"
@@ -12,7 +11,7 @@ ENV LC_ALL "en_US.UTF-8"
 ENV ANDROID_HOME "/android-sdk"
 ENV ANDROID_COMPILE_SDK "28"
 ENV ANDROID_BUILD_TOOLS "28.0.0"
-ENV ANDROID_SDK_TOOLS "3859397"
+ENV ANDROID_SDK_TOOLS "4333796"
 ENV PATH "$PATH:${ANDROID_HOME}/platform-tools"
 
 RUN apk update && \
@@ -43,7 +42,8 @@ RUN apk add glibc-bin-2.26-r0.apk
 RUN apk add glibc-i18n-2.26-r0.apk
 RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
 
-RUN gem install fastlane -v 2.66.2
+RUN gem install fastlane
+RUN curl -sL firebase.tools | bash
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip sdk-tools-linux.zip
 
