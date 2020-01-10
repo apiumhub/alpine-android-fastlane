@@ -49,8 +49,7 @@ RUN apk add glibc-i18n-2.26-r0.apk
 RUN /usr/glibc-compat/bin/localedef -i en_US -f UTF-8 en_US.UTF-8
 
 RUN gem install fastlane
-RUN apk add --no-cache su-exec
-RUN curl -sL firebase.tools | bash
+RUN curl -sL firebase.tools | sed 's#sudo##g' | bash
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip sdk-tools-linux.zip
 
