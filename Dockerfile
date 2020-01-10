@@ -15,7 +15,7 @@ ENV ANDROID_SDK_TOOLS "4333796"
 ENV PATH "$PATH:${ANDROID_HOME}/platform-tools"
 
 RUN apt-get update && \
-    apt-get install \
+    apt-get -y install \
         git \
         bash \
         curl \
