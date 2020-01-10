@@ -1,4 +1,4 @@
-FROM anapsix/alpine-java:8_jdk
+FROM openjdk:8
 LABEL maintainer "Apiumhub <dev@apiumhub.com>"
 ARG VCS_REF
 LABEL org.label-schema.vcs-ref=$VCS_REF \
