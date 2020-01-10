@@ -14,6 +14,8 @@ ENV ANDROID_BUILD_TOOLS "28.0.0"
 ENV ANDROID_SDK_TOOLS "4333796"
 ENV PATH "$PATH:${ANDROID_HOME}/platform-tools"
 
+RUN apt-get install apk
+
 RUN apk update && \
     apk add --no-cache \
         git \
