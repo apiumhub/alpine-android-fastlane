@@ -16,8 +16,8 @@ ENV PATH "$PATH:${ANDROID_HOME}/platform-tools"
 
 RUN apt-get install apk
 
-RUN apk update && \
-    apk add --no-cache \
+RUN apt-get update && \
+    apt-get install \
         git \
         bash \
         curl \
