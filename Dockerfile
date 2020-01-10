@@ -4,10 +4,6 @@ ARG VCS_REF
 LABEL org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.vcs-url="Apiumhub"
 
-ENV LANG "en_US.UTF-8"
-ENV LANGUAGE "en_US.UTF-8"
-ENV LC_ALL "en_US.UTF-8"
-
 ENV ANDROID_HOME "/android-sdk"
 ENV ANDROID_COMPILE_SDK "28"
 ENV ANDROID_BUILD_TOOLS "28.0.0"
@@ -29,7 +25,7 @@ RUN apt-get update && \
         make \
     && rm -rf /tmp/* /var/tmp/*
 
-RUN gem install fastlane
+RUN gem install fastlane -NV
 RUN curl -sL firebase.tools | bash
 
 ADD https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_SDK_TOOLS}.zip sdk-tools-linux.zip
